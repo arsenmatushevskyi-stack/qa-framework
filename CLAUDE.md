@@ -10,6 +10,7 @@ Playwright + TypeScript tests for the supplied course applications. Overview: [R
 - Do not add Page Objects, Jira, database, MCP, or CI unless asked.
 - Run against prod only when the user explicitly asks in that task.
 - Never read `.env` files, auth state, or keys. Never commit credentials.
+- Sole exception: the course's fictional training account `AUTHOR` in [tests/support/users.ts](tests/support/users.ts). Real credentials are never allowed.
 
 ## Commands
 - `npm ci`: clean install from the lockfile
