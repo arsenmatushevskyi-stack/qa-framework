@@ -11,5 +11,5 @@
     "verbatimModuleSyntax": true,
     "skipLibCheck": true
   },
-  "include": ["playwright.config.ts", "env", "tests"]
+  "include": ["playwright.config.ts", "env", "tests", "safety"]
 }

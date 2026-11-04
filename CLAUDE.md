@@ -18,6 +18,7 @@ Playwright + TypeScript tests for the supplied course applications. Overview: [R
 - `npm run test:prod`: browser tests on prod
 - `npm run test:list`: list tests without running them
 - `npm run typecheck`: check types only
+- `npm run test:safety`: isolated checks, no browser or course services
 
 ## Settings
 - Permissions: [.claude/settings.json](.claude/settings.json)

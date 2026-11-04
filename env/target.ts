@@ -1,4 +1,4 @@
-export type TargetName = 'dev' | 'prod';
+export type AppEnv = 'dev' | 'prod';
 
 export interface TargetSettings {
   APP_ENV?: string;
@@ -7,17 +7,17 @@ export interface TargetSettings {
 }
 
 export interface Target {
-  readonly name: TargetName;
+  readonly name: AppEnv;
   readonly baseURL: string;
 }
 
-const BASE_URLS: Readonly<Record<TargetName, string>> = {
+const BASE_URLS: Readonly<Record<AppEnv, string>> = {
   dev: 'https://dev.ai-orchestration-courses.com',
   prod: 'https://ai-orchestration-courses.com',
 };
 
 // Errors name the variable and never include its value.
-function selectName(appEnv: string | undefined): TargetName {
+function selectName(appEnv: string | undefined): AppEnv {
   if (appEnv === undefined || appEnv === 'dev') return 'dev';
   if (appEnv === 'prod') return 'prod';
   throw new Error('APP_ENV must be exactly "dev" or "prod" when set.');
@@ -63,4 +63,8 @@ export function getTarget(): Target {
     );
   }
   return pinned.target;
+}
+
+export function currentEnv(): AppEnv {
+  return getTarget().name;
 }
