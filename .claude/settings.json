@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "deny": [
+      "Read(**/.env)",
+      "Read(**/.env.*)",
+      "Read(**/.auth/**)",
+      "Read(**/*.pem)",
+      "Read(**/*.key)",
+      "Read(**/*.p12)",
+      "Read(**/storage-state.json)",
+      "Read(**/*storageState*.json)"
+    ],
+    "ask": [
+      "Bash(npm run test:prod*)",
+      "Bash(APP_ENV=prod *)",
+      "Bash(npm install*)",
+      "Bash(git push*)"
+    ],
+    "allow": [
+      "Bash(npm test)",
+      "Bash(npm test *)",
+      "Bash(npm run test:list*)",
+      "Bash(npm run typecheck)",
+      "Bash(npm run test:safety*)",
+      "Bash(git status*)",
+      "Bash(git diff*)",
+      "Bash(git log*)"
+    ]
+  }
+}
